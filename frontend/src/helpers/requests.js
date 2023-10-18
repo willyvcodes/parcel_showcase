@@ -1,4 +1,6 @@
-const server = "http://localhost:8000";
+// const server = "http://localhost:8000";
+const server = 'https://parcel-showcase-server-git-main-william-validos-projects.vercel.app'
+
 const headers = { "Content-Type": "application/json" };
 
 export const getAccessToken = async (username, password) => {
