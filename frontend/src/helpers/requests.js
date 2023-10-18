@@ -1,5 +1,6 @@
-// const server = "http://localhost:8000";
-const server = 'https://parcel-showcase-api.vercel.app'
+require("dotenv").config();
+
+const server = process.env.server || '"http://localhost:8000'
 
 const headers = { "Content-Type": "application/json" };
 
