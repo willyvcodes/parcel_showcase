@@ -7,7 +7,7 @@ import Tracking from "./components/Tracking";
 function App() {
   return (
     <>
-      <nav className="navbar navbar-expand-sm navbar-light bg-light">
+      <nav className="navbar navbar-expand navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             <b>Binger</b>
@@ -27,7 +27,12 @@ function App() {
         </div>
       </nav>
       <Routes>
-        <Route path="/" />
+        <Route path="/" element={
+          <>
+            <h3 className="text-center text-white m-4">Welcome</h3>
+          </>
+        }>
+        </Route>
         <Route path="/Tracking" element={<Tracking />} />
         <Route path="/Login" element={<Login />} />
       </Routes>

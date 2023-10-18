@@ -1,4 +1,5 @@
-const server = "http://localhost:8000";
+const server = process.env.server || '"http://localhost:8000'
+
 const headers = { "Content-Type": "application/json" };
 
 export const getAccessToken = async (username, password) => {
