@@ -1,5 +1,5 @@
 // const server = "http://localhost:8000";
-const server = 'https://parcel-showcase-server-git-main-william-validos-projects.vercel.app'
+const server = 'https://parcel-showcase-api.vercel.app'
 
 const headers = { "Content-Type": "application/json" };
 
