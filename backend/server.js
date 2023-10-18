@@ -13,6 +13,8 @@ const PORT = 8000;
 const prefix = "/api/bringer";
 const BRINGER_API =
   "https://bps.bringer.io/public/api/v2/get/parcel/tracking.json?tracking_number=";
+const BEARER_TOKEN =
+  "BEARER_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE2NzIzMjY1NTUsImV4cCI6MTcwMzg2MjU1NSwiYXVkIjoiaHR0cHM6Ly9icmluZ2VycGFyY2VsLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiNTI1eXM2YWh4d3UyIiwianRpIjoiZDdlZGE3NDgtNzMxOS00YWIzLWI2MGEtMDEzMzI0NmVkNmY2In0.uJi6d6-E2zDWj24wryh2sVWKs4ceny4QllbrHrzK5L0";
 
 const app = express();
 
@@ -28,7 +30,6 @@ app.post(`${prefix}/Generate_Token`, (req, res) => {
 
 app.get(`${prefix}/Tracking_Parcel`, async (req, res) => {
   const { tracking_number } = req.query;
-  const bearer_token = process.env.BEARER_TOKEN;
 
   console.log(`Looking For: ${tracking_number}`);
 
@@ -36,7 +37,7 @@ app.get(`${prefix}/Tracking_Parcel`, async (req, res) => {
     const response = await fetch(`${BRINGER_API}${tracking_number}`, {
       method: "GET",
       headers: {
-        Authorization: `Bearer ${bearer_token}`,
+        Authorization: `Bearer ${BEARER_TOKEN}`,
       },
     });
     if (response.ok) {
