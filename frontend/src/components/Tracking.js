@@ -22,32 +22,31 @@ function Tracking() {
   return (
     
     <div className="container">
-          <div className="w-50 mx-auto">
-            <h3 className="fs-5 text-light">Parcel Tracking</h3>
-            <div className="input-group input-group-sm">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Enter tracking number"
-                value={trackingNumber}
-                onChange={(e) => setTrackingNumber(e.target.value)}
-              />
-              <button
-                className="btn btn-primary"
-                type="button"
-                onClick={handleTrackingData}
-              >
-                Search Parcel
-              </button>
-            </div>
+        <div className="w-50 mx-auto">
+          <h3 className="fs-5 text-light">Parcel Tracking</h3>
+          <div className="input-group input-group-sm">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter tracking number"
+              value={trackingNumber}
+              onChange={(e) => setTrackingNumber(e.target.value)}
+            />
+            <button
+              className="btn btn-primary"
+              type="button"
+              onClick={handleTrackingData}
+            >
+              Search Parcel
+            </button>
           </div>
-          
-      
-      {fetchError ? (
+        </div>
+                
+      {(fetchError) ? (
         <p className="text-danger">{fetchError}</p>
       ) : 
       
-      trackingData ? (
+      (trackingData) ? (
         <div className="container my-4 w-50">
             <div className="row justify-content-center">
               <div className="col-md-6 text-start text-info">
@@ -118,7 +117,7 @@ function Tracking() {
           </ul>
         </div>
       ) : (
-        <p className="text-light">
+        <p className="text-light text-center">
           Search for a parcel with your tracking number
         </p>
       )}
