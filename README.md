@@ -15,7 +15,7 @@ To run this project successfully, you'll need to set up a few environment variab
 
 ## Running the Application
 
-nce you've set up the environment variables, you can start the application by following these steps:
+Once you've set up the environment variables, you can start the application by following these steps:
 
 1. Navigate to the project root directory.
 2. Open a terminal window and run the following command to start the backend:
