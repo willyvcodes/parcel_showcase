@@ -1,8 +1,10 @@
-const server = process.env.SERVER || '"http://localhost:8000'
+const server = process.env.REACT_APP_SERVER_URL || 'http://localhost:8000'
 
 const headers = { "Content-Type": "application/json" };
 
 export const getAccessToken = async (username, password) => {
+  
+
   const payload = {
     login: username,
     password: password,
